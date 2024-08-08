@@ -1,6 +1,6 @@
-# Ad hoc analyses
+# Small ad hoc analyses
 
-### Collection of my shareable previous ad hoc analyses.
+### Collection of my shareable small ad hoc analyses.
 
 
 Purpose: To host, reuse, and share my code used in analyses, for myself and others interested in viewing or reusing.
