@@ -1,6 +1,6 @@
 # Ad hoc analyses
 
-### Collection of my past work on ad hoc analyses, not warranting a individual repo.
+### Collection of my shareable previous ad hoc analyses.
 
 
 Purpose: To host, reuse, and share my code used in analyses, for myself and others interested in viewing or reusing.
