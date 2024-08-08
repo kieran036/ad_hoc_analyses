@@ -1,4 +1,4 @@
-# Ad hoc data analyses
+# Ad hoc analyses
 
 ### Collection of my past work on ad hoc analyses, not warranting a individual repo.
 
