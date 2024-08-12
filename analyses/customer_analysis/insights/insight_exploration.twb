@@ -1115,8 +1115,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='13' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='97516' id='12' param='vert' type-v2='layout-flow' w='97538' x='1231' y='1242'>
+            <zone h='100000' id='15' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97516' id='14' param='vert' type-v2='layout-flow' w='97538' x='1231' y='1242'>
                 <zone fixed-size='280' h='97516' id='3' is-fixed='true' name='Sheet 8' w='48768' x='1231' y='1242'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1421,7 +1421,7 @@
       </viewpoint>
       <simple-id uuid='{34B12064-1B01-44FB-BCC5-EF45E4666A61}' />
     </window>
-    <window class='worksheet' name='Sheet 8'>
+    <window class='worksheet' maximized='true' name='Sheet 8'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1458,7 +1458,7 @@
       </viewpoint>
       <simple-id uuid='{6CF93379-134E-49FB-97DD-53C264B619EE}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 9'>
+    <window class='worksheet' name='Sheet 9'>
       <cards>
         <edge name='left'>
           <strip size='160'>
