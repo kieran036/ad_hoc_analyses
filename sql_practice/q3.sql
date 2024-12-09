@@ -18,5 +18,18 @@
  total_births integer
  
  Notes:
- -
+ -RANK () OVER (expression)
  */
+WITH t_births AS (
+    SELECT "month",
+        SUM(births) AS total_births,
+        RANK() OVER(
+            ORDER BY SUM(births) DESC
+        ) as rank
+    FROM playground.us_birth_stats
+    GROUP BY "month"
+)
+SELECT "month",
+    total_births
+FROM t_births
+WHERE rank = 1
