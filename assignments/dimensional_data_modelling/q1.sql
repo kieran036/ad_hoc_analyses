@@ -16,6 +16,7 @@ CREATE TABLE actors (
     films films [],
     -- Array of the `quality_class` enum type
     quality_class quality_class [],
+    years_since_last_active INTEGER,
     is_active BOOLEAN NOT NULL,
     current_year INTEGER NOT NULL,
     PRIMARY KEY (actorid)
