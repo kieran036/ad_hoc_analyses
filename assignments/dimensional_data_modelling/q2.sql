@@ -40,7 +40,6 @@ SELECT COALESCE(ly.actorid, ty.actorid) AS actorid,
     --is_active = current_year = min_year,
     COALESCE(ty.current_year, ly.current_year + 1) AS current_year,
     """
-    COALESCE(ly.films, ty.films) AS films,
     COALESCE(ly.quality_class, this_year.quality_class) AS quality_class,
     COALESCE(last_year.is_active, this_year.is_active) AS is_active
     """
