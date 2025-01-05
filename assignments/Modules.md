@@ -9,8 +9,8 @@
 - Assignment (0 of 1)
 
 * Apache Spark Fundamentals
-- Lectures (1 of 3)
-- Labs (1 of 3)
+- Lectures (2 of 3)
+- Labs (2 of 3)
 - Assignment
 
 * Data Quality Patterns
@@ -39,8 +39,8 @@
 - Assignment
 
 * Data Visualisation and Impact
-- Lectures
-- Labs
-- Assignment
+- Lectures (2 of 2)
+- Labs (2 of 2)
+- Assignment (0 of 1)
 
 * Unit Testing PySpark Pipelines (unsure if still in course)
