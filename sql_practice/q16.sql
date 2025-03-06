@@ -14,13 +14,18 @@
  
  difference integer
  */
+WITH summary AS (
+    SELECT MAX(salary) AS max_salary,
+        MIN(salary) AS min_salary
+    FROM playground.employees_salary
+)
 SELECT COALESCE(
         (
             SELECT SUM(salary)
             FROM playground.employees_salary
             WHERE salary = (
-                    SELECT MAX(salary)
-                    FROM playground.employees_salary
+                    SELECT max_salary
+                    FROM summary
                 )
         ),
         0
@@ -29,9 +34,9 @@ SELECT COALESCE(
             SELECT SUM(salary)
             FROM playground.employees_salary
             WHERE salary = (
-                    SELECT MIN(salary)
-                    FROM playground.employees_salary
+                    SELECT min_salary
+                    FROM summary
                 )
         ),
         0
-    ) AS difference
+    ) AS difference;
