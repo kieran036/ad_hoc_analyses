@@ -20,22 +20,15 @@
  -Make rows distinct first
  -Having uses the expression but should minimise having
  */
-WITH t_unique AS (
-    SELECT DISTINCT viewer_id,
-        view_date,
-        article_id,
-        author_id
+WITH summary AS (
+    SELECT VIEWER_ID,
+        VIEW_DATE,
+        COUNT(DISTINCT(ARTICLE_ID)) AS articles_viewed
     FROM playground.views
-),
-t_articles AS (
-    SELECT viewer_id,
-        COUNT(article_id) AS article_views,
-        view_date
-    FROM t_unique
-    GROUP BY viewer_id,
-        view_date
+    GROUP BY VIEWER_ID,
+        VIEW_DATE
 )
-SELECT DISTINCT viewer_id
-FROM t_articles
-WHERE article_views > 1
-ORDER BY viewer_id ASC
+SELECT VIEWER_ID
+FROM summary
+WHERE articles_viewed > 1
+ORDER BY VIEWER_ID ASC
