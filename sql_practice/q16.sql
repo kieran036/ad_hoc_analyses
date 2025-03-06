@@ -14,21 +14,24 @@
  
  difference integer
  */
-WITH t_avg_sal AS (
-    SELECT AVG(salary) avg_sal
-    FROM playground.employees_salary
-),
-diff AS(
-    SELECT id,
-        name,
-        CAST(salary AS INT) AS salary,
-        avg_sal,
-CASE
-            WHEN salary IS NULL THEN 0
-            WHEN salary IS NOT NULL THEN salary - avg_sal
-        END AS difference
-    FROM playground.employees_salary as s
-        CROSS JOIN t_avg_sal AS t
-)
-SELECT SUM(difference) AS difference
-FROM diff
+SELECT COALESCE(
+        (
+            SELECT SUM(salary)
+            FROM playground.employees_salary
+            WHERE salary = (
+                    SELECT MAX(salary)
+                    FROM playground.employees_salary
+                )
+        ),
+        0
+    ) - COALESCE(
+        (
+            SELECT SUM(salary)
+            FROM playground.employees_salary
+            WHERE salary = (
+                    SELECT MIN(salary)
+                    FROM playground.employees_salary
+                )
+        ),
+        0
+    ) AS difference

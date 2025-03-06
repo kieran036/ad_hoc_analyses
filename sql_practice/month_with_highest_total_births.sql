@@ -20,16 +20,16 @@
  Notes:
  -RANK () OVER (expression)
  */
-WITH t_births AS (
+WITH summary AS (
     SELECT "month",
         SUM(births) AS total_births,
         RANK() OVER(
             ORDER BY SUM(births) DESC
-        ) as rank
+        ) as birth_rank
     FROM playground.us_birth_stats
     GROUP BY "month"
 )
 SELECT "month",
     total_births
-FROM t_births
-WHERE rank = 1
+FROM summary
+WHERE birth_rank = 1

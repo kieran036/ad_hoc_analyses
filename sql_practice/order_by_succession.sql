@@ -18,6 +18,7 @@
 SELECT CASE
         WHEN gender = 'M' THEN 'King ' || name
         WHEN gender = 'F' THEN 'Queen ' || name
+        ELSE 'Title ' || name
     END AS name,
     birthday
 FROM playground.successors
