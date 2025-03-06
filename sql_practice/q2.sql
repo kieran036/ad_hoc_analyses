@@ -23,7 +23,7 @@ SELECT id,
     CASE
         WHEN given_answer IS NULL THEN 'no answer'
         WHEN given_answer = correct_answer THEN 'correct'
-        WHEN given_answer != correct_answer THEN 'incorrect'
-        ELSE 'OTHER'
+        ELSE 'incorrect'
     END AS checks
 FROM playground.answers
+ORDER BY id
