@@ -19,6 +19,7 @@ city_summary AS (
         num_customers
     FROM city_summary
     WHERE num_customers > (
+            --Bring avg_all into WHERE clause
             SELECT avg_customers
             FROM avg_all
         )
