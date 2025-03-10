@@ -14,11 +14,19 @@ city_summary AS (
         COUNT(id) AS num_customers
     FROM customer
     GROUP BY city_id
+) final_cities AS (
+    SELECT city_id,
+        num_customers
+    FROM city_summary
+    WHERE num_customers > (
+            SELECT avg_customers
+            FROM avg_all
+        )
 )
-SELECT city_id,
-    num_customers
-FROM city_summary AS cs
-WHERE num_customers > (
-        SELECT avg_customers
-        FROM avg_all
-    )
+SELECT co.country_name AS country_name,
+    c.city_name AS city_name,
+    fc.num_customers AS num_customers
+FROM final_cities AS fc
+    JOIN city AS c ON fc.city_id = c.id
+    JOIN country AS co ON c.country_id = co.id
+ORDER BY country_name ASC;
